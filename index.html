@@ -4,128 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Form Processor</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
-.container {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #121212;
-    background: linear-gradient(
-        135deg,
-        #121212 25%,
-        #1a1a1a 25%,
-        #1a1a1a 50%,
-        #121212 50%,
-        #121212 75%,
-        #1a1a1a 75%,
-        #1a1a1a
-    );
-    background-size: 40px 40px;
-    animation: move 4s linear infinite;
-}
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #121212;
+            background: linear-gradient(
+                135deg,
+                #121212 25%,
+                #1a1a1a 25%,
+                #1a1a1a 50%,
+                #121212 50%,
+                #121212 75%,
+                #1a1a1a 75%,
+                #1a1a1a
+            );
+            background-size: 40px 40px;
+            animation: move 4s linear infinite;
+        }
 
-@keyframes move {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 40px 40px;
-    }
-}
+        @keyframes move {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 40px 40px;
+            }
+        }
 
-.content {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    width: 90%;
-}
+        .content {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 90%;
+        }
 
-h1 {
-    color: #333;
-    margin-bottom: 1rem;
-}
+        h1 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
 
-form {
-    margin-bottom: 1rem;
-}
+        form {
+            margin-bottom: 1rem;
+        }
 
-#input {
-color: rgb(87, 75, 75);
-border: 2px solid #8707ff;
-border-radius: 10px;
-padding: 10px 25px;
-background: transparent;
-max-width: 190px;
-}
+        #input {
+            color: rgb(87, 75, 75);
+            border: 2px solid #8707ff;
+            border-radius: 10px;
+            padding: 10px 25px;
+            background: transparent;
+            max-width: 190px;
+        }
 
-.input:active {
-box-shadow: 2px 2px 15px #8707ff inset;
-}
+        .input:active {
+            box-shadow: 2px 2px 15px #8707ff inset;
+        }
 
+        button {
+            padding: 10px 20px;
+            background-color: #8707ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-button {
-    padding: 10px 20px;
-    background-color: #8707ff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
+        button:hover {
+            background-color: #8127d6;
+        }
 
-button:hover {
-    background-color: #8127d6;
-}
+        #result {
+            border: 1px solid #ddd;
+            padding: 20px;
+            min-height: 200px;
+            white-space: pre-wrap;
+            background-color: white;
+            border-radius: 4px;
+        }
 
-#result {
-    border: 1px solid #ddd;
-    padding: 20px;
-    min-height: 200px;
-    white-space: pre-wrap;
-    background-color: white;
-    border-radius: 4px;
-}
+        .copy-container {
+            display: flex;
+            margin-top: 1rem;
+        }
 
-.copy-container {
-    display: flex;
-    margin-top: 1rem;
-}
+        #copyText {
+            flex-grow: 1;
+            height: 2.5em;
+            margin-right: 0.5rem;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: none;
+        }
 
-#copyText {
-    flex-grow: 1;
-    height: 2.5em;
-    margin-right: 0.5rem;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    resize: none;
-}
+        #copyButton {
+            padding: 0.5rem 1rem;
+            background-color: #8707ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-#copyButton {
-    padding: 0.5rem 1rem;
-    background-color: #8707ff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#copyButton:hover {
-    background-color: #8127d6;
-}
+        #copyButton:hover {
+            background-color: #8127d6;
+        }
     </style>
 </head>
 <body>
@@ -147,6 +145,47 @@ button:hover {
             </div>
         </div>
     </div>
-    <script src="server.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const formLinkForm = document.getElementById('formLinkForm');
+            const formLinkInput = document.getElementById('input');
+            const resultDiv = document.getElementById('result');
+            const copyText = document.getElementById('copyText');
+            const copyButton = document.getElementById('copyButton');
+
+            formLinkForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formLink = formLinkInput.value;
+                
+                resultDiv.textContent = 'Processing...';
+                
+                try {
+                    const response = await fetch('/process-form', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ formLink }),
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    
+                    const data = await response.json();
+                    resultDiv.textContent = data.results.join('\n\n');
+                } catch (error) {
+                    console.error('Error:', error);
+                    resultDiv.textContent = 'An error occurred while processing the form.(May be because of too many requests from an api)';
+                }
+            });
+
+            copyButton.addEventListener('click', () => {
+                copyText.select();
+                document.execCommand('copy');
+                alert('Text copied to clipboard!');
+            });
+        });
+    </script>
 </body>
 </html>
